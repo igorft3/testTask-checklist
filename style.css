@@ -1,0 +1,127 @@
+:root {
+  --percent-value: 60;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 18px 12px 18px;
+  width: 706px;
+  gap: 12px;
+  background-color: #3579f5;
+  border-radius: 10px;
+  color: white;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.checklist__progress-bar,
+.checklist__text,
+.checklist__name,
+.checklist__btn {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+}
+
+.checklist__progress-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.checklist__wrapp > * {
+  letter-spacing: 0.3px;
+  margin: 0;
+  margin-bottom: 4px;
+}
+
+.checklist__name {
+  position: relative;
+  display: inline-block;
+  padding: 0 13px;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.4px;
+  background-color: #2364db;
+  border-radius: 40px;
+}
+
+.checklist__title {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+.checklist__text {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.4px;
+}
+
+.checklist__btn {
+  margin-left: auto;
+  padding: 10px 25px;
+  color: #4777ed;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.6px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f4f8ff;
+}
+
+/* Circle */
+
+svg {
+  width: 68px;
+  height: 68px;
+}
+
+.bg {
+  fill: none;
+  stroke-width: 0.1px;
+  stroke: rgba(255, 255, 255, 0.5);
+}
+
+.line {
+  fill: none;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+  stroke-dasharray: 326.72;
+  stroke-dashoffset: calc(326.72 * (1 - (var(--percent-value) / 100)));
+  stroke: #fff;
+  animation: progress 1s ease-out;
+}
+
+.checklist__progress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #fff;
+}
+
+@keyframes progress {
+  from {
+    stroke-dashoffset: 326.72;
+  }
+  to {
+    stroke-dashoffset: calc(326.72 * (1 - (var(--percent-value) / 100)));
+  }
+}
